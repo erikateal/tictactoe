@@ -1,0 +1,136 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size) * .7)
+}
+body{
+    margin: 0;
+}
+.board{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3,auto);
+}
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    padding: 80px;
+    background-color: rgb(166, 180, 163);
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+/*Removes grid on outer boarders */
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+.cell:last-child,
+.cell:nth-child(7),
+.cell:nth-child(8){
+    border-bottom: none;
+}
+.cell:nth-child(3n+1){
+    border-left: none;
+}
+.cell:nth-child(3n+3){
+    border-right: none;
+}
+/* Not allowed cursor when box is filled */
+.cell.x,
+.cell.o{
+    cursor: not-allowed;
+}
+/* Makes X/O's color lighter on hover */
+.cell.x::before,
+.cell.x::after,
+.cell.o::before{
+    background-color: white;
+}
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after,
+.board.o .cell:not(.x):not(.o):hover::before{
+    background-color: green;
+}
+/* making the X's */
+/* add hover effects for X's turn*/
+.cell.x::before,
+.cell.x::after,
+.board.x .cell:not(.x):not(.o):hover::before,
+.board.x .cell:not(.x):not(.o):hover::after{
+    content: '';
+    position: absolute;
+    width: calc(var(--mark-size) * .15);
+    height: var(--mark-size);
+}
+.cell.x::before,
+.board.x .cell:not(.x):not(.o):hover::before{
+    transform: rotate(45deg);
+}
+.cell.x::after,
+.board.x .cell:not(.x):not(.o):hover::after{
+    transform: rotate(-45deg);
+}
+/* making the O's */
+/* add hover effects for O's turn*/
+.cell.o::before,
+.cell.o::after,
+.board.o .cell:not(.x):not(.o):hover::before,
+.board.o .cell:not(.x):not(.o):hover::after{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+.cell.o::before,
+.board.o .cell:not(.x):not(.o):hover::before{
+    width: var(--mark-size);
+    height: var(--mark-size);
+}
+.cell.o::after,
+.board.o .cell:not(.x):not(.o):hover::after{
+    width: calc(var(--mark-size)* .7);
+    height: calc(var(--mark-size) * .7);
+    background-color: rgb(166, 180, 163);
+}
+/* styling the button & styling the winner page */
+.winning-message{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(34, 72, 34, 0.8);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column;
+}
+.winning-message button{
+    font-size: 2rem;
+    background-color: rgb(38, 104, 38);
+    border: 1px solid white;
+    padding: .15em .5em;
+    cursor: pointer;
+    color: white;
+}
+.winning-message button:hover{
+    background-color: white;
+    color: green;
+    border-color: green;
+}
+.winning-message.show{
+    display: flex;
+}
