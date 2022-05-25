@@ -1,4 +1,4 @@
-<h1 align="center">Tic Tac Toe |<a href="https://tictactoe3inarow.netlify.app/">Live Site</a></h1>
+<h1 align="center">Tic Tac Toe | <a href="https://tictactoe3inarow.netlify.app/">Live Site</a></h1>
 <div align="center">
   <a href='https://github.com/erikateal/tictactoe'>
 	  <img src="https://github.com/erikateal/READMEAssets/blob/main/projectFiles/tictactoe.gif" width="80%" />
