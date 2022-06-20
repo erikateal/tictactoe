@@ -3,9 +3,11 @@
   <img src="https://github.com/erikateal/READMEAssets/blob/main/projectFiles/tictactoe.gif">
 </p>
 
-<!-- ## How It's Made:
- -->
-<!-- I built this project about a week after being introduced to JavaScript. I wanted to make something practical that I would actually use but also something that would employ my newly learned skills. I used videos and photos from [pixels.com](https://www.pexels.com/). -->
+A 2-player game of tic tac toe with win, lose, and draw validation
+
+## How It's Made:
+
+I built this project to practice linking JavaScript with HTML and CSS. I wanted to make something that I would be able to build off of for a larger project that I am working on regarding skincare. This design is fully responsive and allowed me to practice skills such as accessibility, refactoring code, fetching data from APIs, etc.
 
 
 <h2 align="center">Technology used:</h2>
@@ -23,4 +25,4 @@
 
 ## What I Learned:
 
-<!-- I learned how to manipulate the DOM, as well as how to auto play audio and video. Sound on! 🔊 -->
+I practiced using CSS pseudo classes to style the boxes and learned how to use CSS variables for repetitive style choices. For JavaScript, I practiced constant declaration, global variables, building nested arrays, manipulating the DOM, adding and removing classes from HTML elements, ternary operators, array methods, spreading arrays, and more! 
